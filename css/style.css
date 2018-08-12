@@ -1,0 +1,447 @@
+html, body {
+    background: url(../images/wood.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    background: url(../images/sidemenu.png);
+    display: inline-block;
+    float: left;
+    width: 20%;
+    height: 100%;
+    transition: width ease-in;
+    transition-duration: 0.5s;
+    overflow: hidden;
+}
+
+.sidebar.min-sidebar {
+    width: 3%;
+    transition-duration: 0.5s;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    transition: opacity 1s ease-in;
+}
+
+.sidebar ul.min-menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebar ul li {
+    line-height: 50px;
+    list-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 120px;
+    border-bottom: 1.9px dotted #bdbcbb;
+}
+
+.sidebar ul li:hover {
+    background: #6aa1ce;
+    color: #fff;
+    border: 1px solid #3070a6;
+    cursor: pointer;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    margin-left: 5%;
+}
+
+.sidebar ul li a span {
+    color: #433d3d;
+    margin: 10px;
+}
+
+.sidebar ul li:hover a span {
+    color: #fff;
+    margin: 10px;
+}
+
+.sidebar ul li a i {
+    color: #bcbcbb;
+    padding: 0px 0px;
+    font-size: 20px;
+}
+
+.sidebar ul li:hover a i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.hide-button {
+    font-size: 25px;
+    height: 5%;
+}
+
+.hide-button a {
+    background-image: url(../images/sidemenu.png);
+    color: #777;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: calc(100% - 37px);
+}
+
+.hide-button a:hover {
+    color: #000;
+}
+
+.content {
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+    transition: width ease;
+    transition-duration: 0.5s;
+}
+
+.content.trans-content {
+    width: 97%;
+    transition-duration: 1.3s;
+}
+
+.content-in {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    min-width: 700px;
+}
+
+.task {
+    width: 100%;
+    height: 100%;
+}
+
+.tasks {
+    float: left;
+    width: 50%;
+    height: 100%;
+    display: block;
+}
+
+.tasks.showTask {
+    display: block;
+}
+
+.task-content {
+    padding-left: 10%;
+    margin-top: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+.task-content-scroll {
+    min-height: 100px;
+    max-height: 485px;
+    padding-right: 10px;
+    overflow: auto;
+}
+
+.subtask {
+    width: 50%;
+    height: 100%;
+    display: none;
+}
+
+.subtask.trans {
+    display: inline-block;
+}
+
+.subtask-content {
+    width: 90%;
+    height: 85%;
+    margin-top: 10%;
+    background: url(../images/subtask.png);
+    border-radius: 10px;
+    border: 2px solid #e5e5e5;
+}
+
+.task-input {
+    width: 93%;
+    padding: 3%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(35, 35, 35, 0.3);
+    font-size: 16px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.delete-task {
+    width: 80%;
+    margin-left: 10%;
+    height: 5.5%;
+    text-align: center;
+    color: #fff;
+    display: none;
+    border-radius: 5px;
+    border: 1px solid #bcbbbb;
+    cursor: pointer;
+}
+
+.delete-task.trans {
+    display: block;
+}
+
+.delete-task:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.delete-task i {
+    line-height: 35px;
+    font-size: 20px;
+    margin-right: 20px padding: 0%;
+}
+
+.delete-task p {
+    display: inline;
+    margin-left: 20px;
+}
+
+.checkbox-input {
+    background: #cde1f3;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+
+.checkbox-subtask {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 20px 30px;
+}
+
+.task-display {
+    width: 100%;
+    height: 40px;
+    background: url(../images/task.png);
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-display a {
+    min-width: 0%;
+    max-width: 50%;
+    color: #343434;
+    float: left;
+    margin: 0;
+    padding-left: 10px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 1px dotted #BDBDBD;
+}
+
+.task-display i {
+    padding: 10px 5px;
+    color: #6e97be;
+}
+
+.task-display span {
+    float: right;
+    margin: 12px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #3070a6;
+}
+
+.subtask-header h3 {
+    background: #dfdfdf;
+    text-align: left;
+    margin: -1px;
+    padding: 20px;
+    font-size: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #000;
+    box-shadow: 0px 1px 3px 0px #777;
+}
+
+.subtask-input {
+    margin-top: 1px;
+    text-align: left;
+    color: #777;
+    display: block;
+}
+
+.subtask-input ul {
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+.subtask-input ul li {
+    padding: 0px 0px;
+    list-style: none;
+    border-bottom: 1.5px dotted #bdbcbb;
+}
+
+.subtask-input ul li i {
+    color: #bcbcbb;
+    font-size: 20px;
+    margin: 10px 30px;
+}
+
+.subtask-input ul li p {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.subtask-date {
+    margin: 15px 0px 15px 0px;
+    width: 62%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    border: transparent;
+    color: #000;
+}
+
+.hour-select {
+    margin: 15px 5px 15px 0px;
+    width: 62%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    border: transparent;
+    color: #000;
+}
+
+.time_pick {
+    display: inline;
+}
+
+.minute-select {
+    margin: 15px 5px 15px 0px;
+    width: 20%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    border: transparent;
+    color: #000;
+}
+
+.meridian-select {
+    margin: 15px 5px 15px 0px;
+    width: 20%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    border: transparent;
+    color: #000;
+}
+
+.subtask-note {
+    text-align: center;
+    color: #000;
+    height: 58%;
+    padding-bottom: 73px;
+    overflow: hidden;
+}
+
+.notetrans {
+    padding-bottom: 185px;
+}
+
+.box-input {
+    margin: 30px 30px 0px 30px;
+    width: calc(100%-30px);
+    height: 36px;
+    border: 1px solid #D6D6D6;
+    box-shadow: 0px 2px 1px -1px #777;
+}
+
+.box-input i {
+    background-color: #fff;
+    color: #bcbcbb;
+    padding: 10px;
+    float: left;
+}
+
+.note {
+    float: left;
+    width: calc(100% - 58px);
+    padding: 10px 10px;
+    border: transparent;
+    display: inline-block;
+    border-left: 5px double #FAE7E7;
+}
+
+.note:focus {
+    outline: none;
+}
+
+.subtask-display {
+    width: 80%;
+    height: 125px;
+    margin: 30px 30px 30px 30px;
+    background: url(../images/note.png);
+    opacity: 0.7;
+    border: 1px solid #D6D6D6;
+    display: inline-block;
+    overflow: hidden;
+    box-shadow: 0px 2px 1px -1px #777;
+}
+
+.subtask-display i {
+    color: #777;
+    margin: 10px;
+    float: right;
+}
+
+.subtask-display p {
+    line-height: 20px;
+    margin: 20px;
+}
+
+.footer {
+    color: #bcbcbb;
+    height: 10%;
+    border-top: 1px solid #d6d6d6;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.footer i {
+    float: left;
+    margin: 14px;
+    font-size: 20px;
+}
+
+.footer p {
+    float: right;
+    margin: 14px;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.scroll {
+    max-height: 192px;
+    overflow: auto;
+}
